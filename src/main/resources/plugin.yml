@@ -1,0 +1,169 @@
+name: HungerGame
+version: '${project.version}'
+main: com.hungergames.HungerGame
+api-version: '1.21'
+softdepend: [FancyHolograms, Multiverse-Core]
+
+permissions:
+  hungerGame.hunger:
+    description: "Ouvre la vue d'ensemble de l'état du jeu"
+    default: op
+
+  hungerGame.classe:
+    description: "Ouvre le choix de classe, ou retire la classe d'un joueur"
+    default: op
+
+  hungerGame.pnj:
+    description: "Crée ou retire des mannequins d'entraînement"
+    default: op
+
+  hungerGame.equipe:
+    description: "Ouvre le choix d'équipe, ou gère les équipes à la main"
+    default: op
+
+  hungerGame.verif:
+    description: "Force le choix d'équipe puis de classe"
+    default: op
+
+  hungerGame.mode:
+    description: "Change le mode de partie, ou resynchronise un joueur"
+    default: op
+
+  hungerGame.role:
+    description: "Attribue, retire ou liste les rôles"
+    default: op
+
+  hungerGame.pvp:
+    description: "Active ou coupe le PVP sur la map active"
+    default: op
+
+  hungerGame.go:
+    description: "Choisit la map et lance la partie"
+    default: op
+
+  hungerGame.config:
+    description: "Règle les coffres et durées d'une map, ou retire les coffres posés"
+    default: op
+
+  hungerGame.end:
+    description: "Clôture la partie et affiche le top kills"
+    default: op
+
+  hungerGame.loot:
+    description: "Gère les pools de loot"
+    default: op
+
+  hungerGame.vanish:
+    description: "Rend invisible aux joueurs"
+    default: op
+
+  hungerGame.classeholo:
+    description: "Donne les œufs qui posent les hologrammes de classe (FancyHolograms requis)"
+    default: op
+
+  hungerGame.largage:
+    description: "Déclenche un largage pendant la partie"
+    default: op
+
+  hungerGame.bordure:
+    description: "Change la vitesse de la bordure pendant la partie"
+    default: op
+
+  hungerGame.max:
+    description: "Rétrécit la bordure à la vitesse maximale pendant la partie"
+    default: op
+
+  hungerGame.resetmap:
+    description: "Restaure une map depuis sa sauvegarde"
+    default: op
+
+commands:
+  hunger:
+    description: "Ouvre la vue d'ensemble de l'état du jeu"
+    permission: hungerGame.hunger
+    usage: "/hunger"
+
+  classe:
+    description: "Ouvre le choix de classe, ou retire la classe d'un joueur"
+    permission: hungerGame.classe
+    usage: "/classe [leave <joueur>]"
+
+  pnj:
+    description: "Crée ou retire des mannequins d'entraînement"
+    permission: hungerGame.pnj
+    usage: "/pnj [kill]"
+
+  equipe:
+    description: "Ouvre le choix d'équipe, ou gère les équipes à la main"
+    permission: hungerGame.equipe
+    usage: "/equipe [create <joueur> <nom> <couleur>|add <joueur> <equipe>|leave <joueur>]"
+
+  verif:
+    description: "Force le choix d'équipe puis de classe"
+    permission: hungerGame.verif
+    usage: "/verif"
+
+  mode:
+    description: "Change le mode de partie, ou resynchronise un joueur"
+    permission: hungerGame.mode
+    usage: "/mode [lobby|off <joueur>]"
+
+  role:
+    description: "Attribue, retire ou liste les rôles"
+    permission: hungerGame.role
+    usage: "/role <add|remove> <admin|afk|tous> <joueur|@a> ou /role list <joueur|@a>"
+
+  pvp:
+    description: "Active ou coupe le PVP sur la map active"
+    permission: hungerGame.pvp
+    usage: "/pvp <on|off>"
+
+  go:
+    description: "Choisit la map et lance la partie"
+    permission: hungerGame.go
+    usage: "/go [test|test_duo]"
+
+  config:
+    description: "Règle les coffres et durées d'une map, ou retire les coffres posés"
+    permission: hungerGame.config
+    usage: "/config [nettoyer]"
+
+  end:
+    description: "Clôture la partie et affiche le top kills"
+    permission: hungerGame.end
+    usage: "/end"
+
+  loot:
+    description: "Gère les pools de loot"
+    permission: hungerGame.loot
+    usage: "/loot [outil|vider|recharger|liste|defaut]"
+
+  vanish:
+    description: "Rend invisible aux joueurs"
+    permission: hungerGame.vanish
+    usage: "/vanish"
+
+  classeholo:
+    description: "Donne les œufs qui posent les hologrammes de classe (FancyHolograms requis)"
+    permission: hungerGame.classeholo
+    usage: "/classeholo"
+
+  largage:
+    description: "Déclenche un largage pendant la partie"
+    permission: hungerGame.largage
+    usage: "/largage"
+
+  bordure:
+    description: "Change la vitesse de la bordure pendant la partie"
+    permission: hungerGame.bordure
+    usage: "/bordure <normal|lent|eleve|treseleve|megaeleve|secondes>"
+
+  max:
+    description: "Rétrécit la bordure à la vitesse maximale pendant la partie"
+    permission: hungerGame.max
+    usage: "/max"
+
+  resetmap:
+    description: "Restaure une map depuis sa sauvegarde"
+    permission: hungerGame.resetmap
+    usage: "/resetmap [<map>|auto <on|off>]"

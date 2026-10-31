@@ -1,0 +1,280 @@
+# Configuration du plugin. Les textes affichés aux joueurs sont dans messages.yml.
+# Les changements demandent un redémarrage, sauf le loot (/loot recharger).
+# /config écrit ses modifications dans ce fichier, section maps.
+
+lobby:
+  # true : point de spawn du monde principal. false : coordonnées ci-dessous.
+  use-world-spawn: true
+  x: 0.5
+  y: 64.0
+  z: 0.5
+  yaw: 0.0
+  pitch: 0.0
+
+match:
+  min-players: 2
+  min-teams: 2
+  countdown-seconds: 10
+  # Délai entre la fin de partie et le retour au lobby.
+  end-delay-seconds: 20
+  # Heure du monde au lancement, en ticks (1000 = matin).
+  start-time: 1000
+  top-kills: 10
+
+border:
+  # Taille finale = max(final-size-min, diamètre de départ x final-size-ratio).
+  final-size-ratio: 0.25
+  final-size-min: 20.0
+  damage-buffer: 5.0
+  damage-per-second: 0.5
+  warning-distance: 10
+  warning-time: 15
+  slow-multiplier: 2.0
+  # Vitesses de /bordure et /max, en blocs par seconde.
+  speed:
+    fast: 1.0
+    very-fast: 1.5
+    extreme: 2.0
+    max: 3.0
+
+teams:
+  # Nom automatique d'une équipe, {n} est son numéro.
+  name-format: "District {n}"
+  random-colors: [BLUE, GREEN, YELLOW, AQUA, LIGHT_PURPLE, GOLD, DARK_GREEN, DARK_AQUA, DARK_PURPLE, WHITE]
+  refusal-cooldown-seconds: 30
+  # Réapparition d'un joueur mort tant que son coéquipier survit.
+  revive-delay-seconds: 90
+  revive-sweep-seconds: 120
+
+combat-tag:
+  tag-seconds: 30
+  disconnect-timeout-seconds: 60
+  # En dessous de ce nombre de points de vie (2 = 1 cœur), une déconnexion en combat élimine aussitôt.
+  instant-elimination-health: 8.0
+
+airdrops:
+  manual-radius: 15
+
+classes:
+  cooldown-seconds: 180
+  bounty-seconds: 180
+
+reset:
+  auto-after-match: false
+
+# Valeurs reprises par chaque map, qui peut redéfinir n'importe laquelle dans sa propre section.
+map-defaults:
+  chests:
+    total: 115
+    center-percent: 22
+    scatter-radius: 200
+    cluster-radius: 20
+  # Poids relatifs, pas besoin que le total fasse 100.
+  rarity-weights:
+    COMMUN: 38
+    PEU_COMMUN: 25
+    RARE: 18
+    EPIQUE: 12
+    LEGENDAIRE: 7
+    LARGAGE: 0
+  border:
+    shrink-delay-seconds: 300
+  match:
+    max-duration-seconds: 2700
+  airdrops:
+    interval-seconds: 600
+    first-delay-seconds: 300
+    player-radius: 50
+
+# Chaque clé est le nom du dossier du monde, à la racine du serveur.
+# Y correspond au niveau des pieds, tel qu'affiché par F3.
+maps:
+  arena:
+    name: "&cArène"
+    icon: RED_WOOL
+    center:
+      x: 0.0
+      y: 64.0
+      z: 0.0
+    # Rayon du cercle sur lequel les équipes apparaissent.
+    spawn-radius: 40.0
+    # Rayon de la bordure au départ.
+    border-radius: 200.0
+    # Dossier copié par /resetmap, à la racine du serveur. Laisser vide pour désactiver.
+    backup-folder: arena_backup
+    load-on-start: true
+    # Facultatif : centres distincts du centre de la map.
+    # chests:
+    #   scatter-center: {x: 0.0, y: 64.0, z: 0.0}
+    #   cluster-center: {x: 0.0, y: 64.0, z: 0.0}
+
+loot:
+  items-per-chest:
+    min: 3
+    max: 6
+  # Ne peut sortir qu'une seule fois par partie, tous coffres confondus.
+  unique-per-game: [MACE]
+  # Format : MATERIAU quantité [enchantement:niveau ...] [potion:type]
+  # Un coffre capturé en jeu avec /loot remplace le pool concerné (stocké dans chest-items.yml).
+  pools:
+    COMMUN:
+      '1':
+        - BREAD 4
+        - COOKED_BEEF 3
+        - OAK_PLANKS 16
+        - COBBLESTONE 8
+        - TORCH 8
+        - COBWEB 2
+        - WOODEN_AXE 1
+        - LEATHER_HELMET 1
+        - LEATHER_CHESTPLATE 1
+        - SHIELD 1
+        - FISHING_ROD 1
+        - SNOWBALL 8
+        - ARROW 4
+        - LEATHER_BOOTS 1
+      '2':
+        - APPLE 4
+        - COOKED_CHICKEN 3
+        - COBWEB 2
+        - STONE_SWORD 1
+        - COBBLESTONE 16
+        - OAK_PLANKS 8
+        - ARROW 6
+        - BOW 1
+        - FISHING_ROD 1
+        - SNOWBALL 8
+        - IRON_HELMET 1
+        - GOLDEN_BOOTS 1
+        - LEATHER_LEGGINGS 1
+    PEU_COMMUN:
+      '1':
+        - COOKED_PORKCHOP 3
+        - BAKED_POTATO 5
+        - FEATHER 2
+        - STONE_SWORD 1
+        - STONE_AXE 1
+        - COBWEB 2
+        - STONE_BRICKS 8
+        - LEATHER_CHESTPLATE 1
+        - BOW 1
+        - ARROW 8
+        - SNOWBALL 12
+        - CHAINMAIL_BOOTS 1
+      '2':
+        - GOLDEN_CARROT 2
+        - COOKED_MUTTON 3
+        - COBWEB 2
+        - COBBLESTONE 12
+        - IRON_INGOT 2
+        - SHIELD 1
+        - CHAINMAIL_CHESTPLATE 1
+        - ARROW 6
+        - STONE_AXE 1
+        - SNOWBALL 12
+        - IRON_BOOTS 1
+        - WIND_CHARGE 1
+    RARE:
+      '1':
+        - IRON_SWORD 1
+        - IRON_AXE 1
+        - IRON_CHESTPLATE 1
+        - GOLDEN_APPLE 1
+        - COOKED_SALMON 4
+        - SHIELD 1
+        - IRON_INGOT 2
+        - DIAMOND_HELMET 1
+        - STONE_BRICKS 8
+        - COBWEB 3
+        - ARROW 8
+        - IRON_BOOTS 1
+        - ENDER_PEARL 1
+        - WIND_CHARGE 2
+        - POTION 1 potion:swiftness
+      '2':
+        - IRON_SWORD 1 sharpness:1
+        - IRON_HELMET 1
+        - IRON_LEGGINGS 1
+        - CROSSBOW 1
+        - COBWEB 3
+        - STONE_BRICKS 8
+        - ARROW 10
+        - GOLDEN_CARROT 2
+        - BREAD 5
+        - DIAMOND_BOOTS 1
+        - POTION 1 potion:strength
+        - WIND_CHARGE 2
+    EPIQUE:
+      '1':
+        - DIAMOND_CHESTPLATE 1
+        - DIAMOND_SWORD 1 sharpness:1
+        - IRON_BOOTS 1
+        - GOLDEN_APPLE 1
+        - COOKED_BEEF 6
+        - COBBLESTONE 8
+        - COBWEB 3
+        - ENDER_PEARL 2
+        - POTION 1 potion:healing
+        - BOW 1 power:1
+        - ARROW 8
+      '2':
+        - DIAMOND_AXE 1
+        - DIAMOND_LEGGINGS 1
+        - IRON_HELMET 1
+        - ARROW 10
+        - GOLDEN_APPLE 1
+        - GOLDEN_CARROT 4
+        - OAK_PLANKS 8
+        - ENDER_PEARL 2
+        - POTION 1 potion:regeneration
+        - WIND_CHARGE 4
+    LEGENDAIRE:
+      '1':
+        - MACE 1 wind_burst:1
+        - GOLDEN_APPLE 2
+        - DIAMOND_BOOTS 1
+        - DIAMOND_HELMET 1 protection:1
+        - WIND_CHARGE 4
+        - ENDER_PEARL 3
+        - OBSIDIAN 3
+      '2':
+        - TRIDENT 1
+        - WIND_CHARGE 8
+        - ARROW 10
+        - ENCHANTED_GOLDEN_APPLE 1
+        - COOKED_PORKCHOP 6
+        - ENDER_PEARL 2
+        - DIAMOND_HELMET 1 protection:1
+        - NETHERITE_CHESTPLATE 1 protection:1
+        - NETHERITE_BOOTS 1 protection:1
+        - OBSIDIAN 3
+        - POTION 1 potion:healing
+    LARGAGE:
+      '1':
+        - DIAMOND_SWORD 1 sharpness:4
+        - WIND_CHARGE 6
+        - SPLASH_POTION 1 potion:poison
+        - GOLDEN_APPLE 2
+        - ENDER_PEARL 2
+        - SNOWBALL 8
+      '2':
+        - TRIDENT 1 impaling:2 riptide:3
+        - WIND_CHARGE 8
+        - SPLASH_POTION 1 potion:slowness
+        - ENCHANTED_GOLDEN_APPLE 1
+        - ENDER_PEARL 3
+        - COOKED_BEEF 6
+      '3':
+        - NETHERITE_AXE 1 efficiency:2 sharpness:3
+        - WIND_CHARGE 6
+        - SPLASH_POTION 1 potion:weakness
+        - GOLDEN_APPLE 2
+        - NETHERITE_BOOTS 1 protection:1
+        - SNOWBALL 8
+      '4':
+        - TOTEM_OF_UNDYING 1
+        - ENCHANTED_GOLDEN_APPLE 1
+        - WIND_CHARGE 8
+        - SPLASH_POTION 1 potion:harming
+        - ENDER_PEARL 3
+        - GOLDEN_CARROT 6
