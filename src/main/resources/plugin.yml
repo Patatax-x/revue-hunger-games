@@ -2,6 +2,7 @@ name: HungerGame
 version: '${project.version}'
 main: com.hungergames.HungerGame
 api-version: '1.21'
+authors: [Potato Studio]
 softdepend: [FancyHolograms, Multiverse-Core]
 
 permissions:

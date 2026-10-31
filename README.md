@@ -2,6 +2,8 @@
 
 Plugin Paper de Hunger Games par équipes de 2 : classes à pouvoirs, coffres de loot, bordure qui rétrécit, largages et détection automatique de la victoire.
 
+Développé par Potato Studio.
+
 ## Versions
 
 - Minecraft / Paper 1.21.4
