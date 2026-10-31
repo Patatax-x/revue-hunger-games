@@ -43,8 +43,7 @@ public class CommandeEnd implements CommandExecutor, TabCompleter {
 
     private MapResetManager mapResetManager;
 
-    // estPartieDemarree repasse à false dès la victoire, alors que le monde reste en configuration de partie jusqu'au retour au lobby.
-    // Tout garde-fou sur la phase de jeu doit aussi tester ce drapeau.
+    // estPartieDemarree repasse à false dès la victoire, avant le retour au lobby : tester aussi ce drapeau.
     private volatile boolean finDePartieEnCours = false;
 
     public CommandeEnd(

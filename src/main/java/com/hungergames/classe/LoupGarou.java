@@ -45,7 +45,7 @@ public class LoupGarou implements Listener {
 
     private static final int NOMBRE_CHIENS = 3;
 
-    // Tag persistant : un chien qui survit à un redémarrage doit rester reconnu, la mémoire du plugin ne suffit pas.
+    // Tag persistant : un chien doit rester reconnu après un redémarrage.
     private static final String TAG_CHIEN = "hg_loup_armee";
 
     private final JavaPlugin plugin;
@@ -378,7 +378,7 @@ public class LoupGarou implements Listener {
                     for (List<Wolf> chiens : armees.values()) {
                         for (Wolf chien : chiens) {
                             if (chien != null && chien.isValid()) {
-                                // setTarget n'émet pas EntityTargetLivingEntityEvent : le garde-fou de l'événement ne s'applique pas à cet appel.
+                                // setTarget n'émet pas EntityTargetLivingEntityEvent : le garde-fou doit être ici.
                                 chien.setTarget(null);
                                 chien.setAngry(false);
                             }

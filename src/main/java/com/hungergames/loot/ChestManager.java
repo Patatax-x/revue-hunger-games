@@ -259,7 +259,7 @@ public class ChestManager implements Listener {
         poses.add(emplacementCoffre);
     }
 
-    // addItem remplit toujours depuis le slot 0 : des slots tirés au hasard donnent un coffre d'aspect naturel.
+    // addItem remplit depuis le slot 0 : des slots au hasard donnent un coffre d'aspect naturel.
     private void remplirCoffreDisperse(Inventory inventaire, List<ItemStack> items) {
         List<Integer> slotsLibres = new ArrayList<>();
         for (int slot = 0; slot < inventaire.getSize(); slot++) {

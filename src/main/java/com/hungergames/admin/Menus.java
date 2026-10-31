@@ -18,7 +18,7 @@ public final class Menus {
         return Math.min(TAILLE_MAX, rangees * LARGEUR);
     }
 
-    /** Une seule rangée : centrée. Plusieurs : remplies dans l'ordre. Au-delà de 54, le surplus n'est pas affiché. */
+    /** Une rangée : centrée. Plusieurs : remplies dans l'ordre, 54 emplacements au maximum. */
     public static int[] emplacementsCentres(int elements) {
         int affiches = Math.min(elements, TAILLE_MAX);
         int decalage = elements < LARGEUR ? (LARGEUR - elements) / 2 : 0;

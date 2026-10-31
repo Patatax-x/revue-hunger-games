@@ -2,6 +2,14 @@
   <img src="docs/images/banniere.png" alt="Hunger Games, plugin Paper 1.21.4 par Potato Studio">
 </p>
 
+<p align="center">
+  <img src="https://img.shields.io/badge/version-1.0.0-ff9524?style=for-the-badge&labelColor=1c1a17" alt="Version 1.0.0">
+  <img src="https://img.shields.io/badge/Paper-1.21.4-ff9524?style=for-the-badge&labelColor=1c1a17" alt="Paper 1.21.4">
+  <img src="https://img.shields.io/badge/Java-21-ff9524?style=for-the-badge&labelColor=1c1a17" alt="Java 21">
+  <img src="https://img.shields.io/badge/build-Maven-ff9524?style=for-the-badge&labelColor=1c1a17" alt="Build Maven">
+  <img src="https://img.shields.io/badge/par-Potato%20Studio-ff9524?style=for-the-badge&labelColor=1c1a17" alt="Par Potato Studio">
+</p>
+
 # Hunger Games
 
 Plugin Paper pour organiser des events Hunger Games en duos, développé par Potato Studio. Il gère tout le cycle d'une partie, du lobby au classement final. Les réglages et les textes sont dans des fichiers de configuration.
@@ -91,7 +99,7 @@ Les valeurs affichées sont celles par défaut, toutes modifiables dans `config.
 
 ## Installation
 
-1. Copier `HungerGame-<version>.jar` dans `plugins/`, puis démarrer le serveur une fois pour générer la configuration.
+1. Télécharger le jar depuis la page [Releases](https://github.com/Patatax-x/revue-hunger-games/releases), le copier dans `plugins/`, puis démarrer le serveur une fois pour générer la configuration.
 2. Placer chaque monde de jeu à la racine du serveur et le déclarer dans la section `maps` de `plugins/HungerGame/config.yml`.
 3. Redémarrer. Les mondes sont chargés automatiquement (`load-on-start`). Multiverse-Core reste possible mais n'est pas nécessaire.
 

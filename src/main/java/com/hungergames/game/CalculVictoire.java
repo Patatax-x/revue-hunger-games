@@ -30,7 +30,7 @@ public final class CalculVictoire {
         return false;
     }
 
-    /** Avec une seule équipe au départ (partie de test), il n'y a personne à vaincre : pas de clôture auto. */
+    /** Avec une seule équipe au départ (partie de test), pas de clôture automatique. */
     public static Issue evaluer(int equipesAuDepart, int equipesSurvivantes) {
         if (equipesSurvivantes > 2) {
             return Issue.EN_COURS;

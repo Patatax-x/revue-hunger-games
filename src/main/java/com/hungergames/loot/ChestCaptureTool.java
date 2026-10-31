@@ -187,7 +187,7 @@ public class ChestCaptureTool implements Listener {
             return;
         }
 
-        // Réorganiser le pool reste libre, mais rien ne doit pouvoir y entrer depuis l'inventaire du joueur.
+        // Réorganiser reste libre, mais rien ne doit entrer depuis l'inventaire du joueur.
         if (event.getClickedInventory() != null && event.getClickedInventory().equals(event.getView().getBottomInventory())) {
             event.setCancelled(true);
         }

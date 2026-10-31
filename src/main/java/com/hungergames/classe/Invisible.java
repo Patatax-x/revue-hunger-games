@@ -192,7 +192,7 @@ public class Invisible implements Listener {
         }
 
         if (classeManager.estItemActif(event.getPlayer().getInventory().getItemInMainHand(), Classe.INVISIBLE)) {
-            // setCancelled ne bloque pas l'usage de l'item : sans ceci, la longue-vue zoome quand même.
+            // setCancelled ne bloque pas l'usage de l'item : la longue-vue zoomerait quand même.
             event.setUseItemInHand(Event.Result.DENY);
         }
 

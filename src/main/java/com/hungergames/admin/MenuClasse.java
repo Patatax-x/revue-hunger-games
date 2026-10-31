@@ -39,7 +39,7 @@ public class MenuClasse implements CommandExecutor, Listener, TabCompleter {
 
     private static final int[] EMPLACEMENTS = {2, 3, 4, 5, 6};
 
-    // openBook ne déclenche aucun événement fiable à la fermeture : le menu se rouvre après un délai fixe.
+    // openBook n'émet aucun événement fiable à la fermeture : réouverture après un délai fixe.
     private static final long DELAI_REOUVERTURE_APRES_LIVRE = 40L;
 
     private final JavaPlugin plugin;
@@ -86,7 +86,7 @@ public class MenuClasse implements CommandExecutor, Listener, TabCompleter {
                     continue;
                 }
 
-                // CRAFTING signifie qu'aucun GUI n'est ouvert. Tester "différent de CHEST" rouvrirait le menu par-dessus une enclume.
+                // CRAFTING = aucun GUI ouvert. "Différent de CHEST" rouvrirait le menu par-dessus une enclume.
                 if (player.getOpenInventory().getTopInventory().getType() == InventoryType.CRAFTING) {
                     ouvrirMenu(player);
                 }

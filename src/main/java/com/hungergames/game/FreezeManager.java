@@ -34,7 +34,7 @@ public class FreezeManager implements Listener {
         this.plugin = plugin;
     }
 
-    // Toute capacité active doit tester ceci : déplacer un joueur gelé par annulation de PlayerMoveEvent peut planter le serveur.
+    // À tester avant toute capacité active : déplacer un joueur gelé peut planter le serveur.
     public boolean estGele(Player player) {
         return geles.contains(player.getUniqueId());
     }

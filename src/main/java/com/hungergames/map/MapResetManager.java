@@ -103,7 +103,7 @@ public class MapResetManager {
         Bukkit.getScheduler().runTaskAsynchronously(plugin, () -> copierPuisRemplacer(map, demandeur, dossierBackup, dossierMonde, dossierStaging));
     }
 
-    // La copie part d'abord vers un dossier temporaire : si elle échoue, le monde en place n'a pas été touché.
+    // Copie vers un dossier temporaire : si elle échoue, le monde en place reste intact.
     private void copierPuisRemplacer(GameMap map, CommandSender demandeur, Path dossierBackup, Path dossierMonde, Path dossierStaging) {
         try {
             if (Files.exists(dossierStaging)) {

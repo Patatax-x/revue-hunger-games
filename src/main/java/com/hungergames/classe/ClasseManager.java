@@ -58,7 +58,7 @@ public class ClasseManager implements Listener {
         this.loupGarou = loupGarou;
     }
 
-    // Les tags sont sauvegardés dans le fichier du joueur : ils survivent à sa déconnexion. LobbyManager.onPlayerJoin les purge en mode OFF.
+    // Tags sauvegardés avec le joueur : LobbyManager.onPlayerJoin les purge en mode OFF.
     public Optional<Classe> getClasse(Player player) {
         for (Classe classe : Classe.values()) {
             if (player.getScoreboardTags().contains(classe.getTag())) {

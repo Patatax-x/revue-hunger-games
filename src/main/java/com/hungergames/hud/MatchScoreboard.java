@@ -58,7 +58,7 @@ public class MatchScoreboard {
     private void demarrer() {
         arreter();
 
-        // Le scoreboard principal est obligatoire : un scoreboard dédié ferait perdre au client les couleurs de toutes les Team.
+        // Scoreboard principal obligatoire : un scoreboard dédié ferait perdre les couleurs des Team.
         Scoreboard scoreboard = Bukkit.getScoreboardManager().getMainScoreboard();
         Objective objectif = scoreboard.registerNewObjective(OBJECTIF, "dummy", Messages.get("matchscoreboard.hunger_games"));
         objectif.setDisplaySlot(DisplaySlot.SIDEBAR);

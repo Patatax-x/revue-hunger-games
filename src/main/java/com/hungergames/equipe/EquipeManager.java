@@ -64,7 +64,7 @@ public class EquipeManager implements Listener {
         purgerAnciennesEquipes();
     }
 
-    // Le scoreboard est sauvegardé par le serveur : après un arrêt brutal, une team restante ferait échouer registerNewTeam.
+    // Scoreboard persistant : après un arrêt brutal, une team restante ferait échouer registerNewTeam.
     private void purgerAnciennesEquipes() {
         Scoreboard scoreboard = Bukkit.getScoreboardManager().getMainScoreboard();
 
@@ -430,8 +430,7 @@ public class EquipeManager implements Listener {
         Scoreboard scoreboard = Bukkit.getScoreboardManager().getMainScoreboard();
         Team team = scoreboard.registerNewTeam(PREFIXE_EQUIPE + compteurEquipe.incrementAndGet());
         team.setColor(couleur);
-        // Ne pas repasser à false : un animal apprivoisé hérite de l'équipe de son maître et vanilla bloquerait
-        // ses dégâts avant tout événement Bukkit (loups invulnérables). Voir onDegatsEntreCoequipiers.
+        // À false, les chiens héritent de la team du maître et deviennent invulnérables. Voir onDegatsEntreCoequipiers.
         team.setAllowFriendlyFire(true);
         team.setPrefix(couleur + "[" + nom + "] ");
         return team;
