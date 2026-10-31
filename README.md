@@ -1,28 +1,61 @@
 <p align="center">
-  <img src="docs/images/banniere.png" alt="Hunger Games, par Potato Studio : duos, 5 classes, Paper 1.21.4">
+  <img src="docs/images/banniere.png" alt="Hunger Games, plugin Paper 1.21.4 par Potato Studio">
 </p>
 
 # Hunger Games
 
-Plugin Paper de Hunger Games en duos, développé par Potato Studio. Forme ton équipe, pille les coffres, survis à la bordure : la dernière équipe en vie gagne. Maps, durées, loot et textes se règlent sans toucher au code.
+Plugin Paper pour organiser des events Hunger Games en duos, développé par Potato Studio. Il gère tout le cycle d'une partie, du lobby au classement final. Les réglages et les textes sont dans des fichiers de configuration.
 
-<p align="center">
-  <img src="docs/images/principe.png" alt="Le principe en 4 étapes : former un duo, piller les coffres, survivre à la bordure et aux largages, rester la dernière équipe en vie.">
-</p>
+## Fonctionnalités
 
-<p align="center">
-  <img src="docs/images/equipes.png" alt="Le jeu se joue à deux : négociation du duo, réapparition sous 90 secondes si le coéquipier survit, pas de tir ami, coéquipier attribué au hasard à la fermeture du lobby, passage en spectateur après élimination, finalistes brillants à 2 équipes.">
-</p>
+**Gestion de partie**
+- Modes `OFF`, `LOBBY` et `FERMETURE`, puis lancement avec choix de la map et compte à rebours avec joueurs gelés
+- Fin automatique à la dernière équipe en vie ou à la durée maximale, clôture manuelle avec `/end`
+- Top kills, retour au lobby et nettoyage des coffres en fin de partie
+- Scoreboard de partie : joueurs et équipes restants, prochain largage, état de la bordure
+- Modes de test à un joueur (`/go test`) et à deux joueurs (`/go test_duo`)
 
-<p align="center">
-  <img src="docs/images/twists.png" alt="Les twists : largages près d'un joueur tiré au sort, prime qui fait gagner un cœur, une seule masse par partie, bordure qui rétrécit après 5 minutes, élimination en cas de déconnexion en combat, halo de rareté autour des coffres.">
-</p>
+**Administration**
+- Rôles Admin et AFK, exclus de la partie
+- Outils d'administration en objets dans la barre d'action, en lobby comme en partie
+- Vue d'ensemble de l'état du jeu avec `/hunger`
+- Vanish, mannequins d'entraînement, PVP activable à la demande, resynchronisation d'un joueur
 
-<p align="center">
-  <img src="docs/images/classes.png" alt="Les 5 classes : Bouclier, Vitesse, Invisible, Feu et Loup-Garou.">
-</p>
+**Maps**
+- Nombre de maps libre, chacune avec son nom, son centre, son rayon d'apparition et sa bordure
+- Chargement automatique des mondes au démarrage, Multiverse-Core facultatif
+- Restauration depuis une sauvegarde avec `/resetmap`, manuelle ou automatique après chaque partie
 
-Les durées indiquées sont les valeurs par défaut, modifiables dans `config.yml`.
+**Équipes**
+- Duos formés par menu : demande, acceptation, choix de la couleur
+- Création et modification manuelles avec `/equipe`
+- Appariement automatique des joueurs restants à la fermeture du lobby
+- Réapparition près du coéquipier après un délai réglable
+- Protection contre les dégâts entre coéquipiers
+
+**Classes**
+- 5 classes avec un pouvoir passif et un pouvoir actif : Bouclier, Vitesse, Invisible, Feu, Loup-Garou
+- Choix par menu, livre de description, recharge réglable
+- Hologrammes de présentation pour le lobby avec FancyHolograms
+
+**Coffres et loot**
+- Nombre de coffres par map, part au tas central, rayons et centres réglables
+- 5 raretés à poids réglables, avec 2 variantes de contenu chacune, et un halo de particules par rareté
+- Contenu défini dans `config.yml`, ou capturé en jeu depuis un vrai coffre avec son NBT complet (`/loot`)
+- Éditeur de pools en jeu, objets limités à un exemplaire par partie
+
+**Bordure et largages**
+- Délai avant rétrécissement, taille finale, dégâts et avertissement réglables
+- Vitesse modifiable en cours de partie avec `/bordure` et `/max`
+- Largages automatiques près d'un joueur tiré au sort : 4 variantes de contenu, premier délai, intervalle et rayon réglables
+- Largage manuel sur un joueur choisi avec `/largage`
+
+**Déconnexions**
+- Marquage de combat : une déconnexion élimine aussitôt sous un seuil de vie, sinon après un délai laissé pour revenir
+
+**Personnalisation**
+- Tous les textes dans `messages.yml`, avec codes couleur et valeurs dynamiques
+- Les réglages de `/config` sont enregistrés dans `config.yml`
 
 ## Versions
 
