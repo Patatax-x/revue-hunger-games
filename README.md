@@ -1,8 +1,28 @@
+<p align="center">
+  <img src="docs/images/banniere.png" alt="Hunger Games, par Potato Studio : duos, 5 classes, Paper 1.21.4">
+</p>
+
 # Hunger Games
 
-Plugin Paper de Hunger Games par équipes de 2 : classes à pouvoirs, coffres de loot, bordure qui rétrécit, largages et détection automatique de la victoire.
+Plugin Paper de Hunger Games en duos, développé par Potato Studio. Forme ton équipe, pille les coffres, survis à la bordure : la dernière équipe en vie gagne. Maps, durées, loot et textes se règlent sans toucher au code.
 
-Développé par Potato Studio.
+<p align="center">
+  <img src="docs/images/principe.png" alt="Le principe en 4 étapes : former un duo, piller les coffres, survivre à la bordure et aux largages, rester la dernière équipe en vie.">
+</p>
+
+<p align="center">
+  <img src="docs/images/equipes.png" alt="Le jeu se joue à deux : négociation du duo, réapparition sous 90 secondes si le coéquipier survit, pas de tir ami, coéquipier attribué au hasard à la fermeture du lobby, passage en spectateur après élimination, finalistes brillants à 2 équipes.">
+</p>
+
+<p align="center">
+  <img src="docs/images/twists.png" alt="Les twists : largages près d'un joueur tiré au sort, prime qui fait gagner un cœur, une seule masse par partie, bordure qui rétrécit après 5 minutes, élimination en cas de déconnexion en combat, halo de rareté autour des coffres.">
+</p>
+
+<p align="center">
+  <img src="docs/images/classes.png" alt="Les 5 classes : Bouclier, Vitesse, Invisible, Feu et Loup-Garou.">
+</p>
+
+Les durées indiquées sont les valeurs par défaut, modifiables dans `config.yml`.
 
 ## Versions
 
